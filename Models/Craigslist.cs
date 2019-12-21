@@ -5,7 +5,7 @@ using System.Linq;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace JobSearchV2 
+namespace JobSearchV2
 {
   public class CraigslistClass
   {
@@ -21,7 +21,7 @@ namespace JobSearchV2
       Location = location;
       Date = date;
     }
-    
+
     public static List<CraigslistClass> RunSearch(string jobName, string jobLocation)
     {
       List<CraigslistClass> craigslistJobs = new List<CraigslistClass> { };
@@ -48,7 +48,8 @@ namespace JobSearchV2
           CraigslistClass tempjob = new CraigslistClass(tempTitle, tempLink, tempLocation, tempDate);
           craigslistJobs.Add(tempjob);
         }
-        driver.Close();
+        // driver.Close();
+        Console.WriteLine("JOBBBBSSS: " + craigslistJobs[0].Title + "LOCATED AT: " + craigslistJobs[0].Location);
         return craigslistJobs;
       }
       catch
@@ -59,5 +60,5 @@ namespace JobSearchV2
         return craigslistJobs;
       }
     }
-  }  
+  }
 }

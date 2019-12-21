@@ -10,18 +10,14 @@ using Microsoft.Extensions.Logging;
 
 namespace JobSearchV2
 {
-    public class Program
+  public class Program
+  {
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            CraigslistClass.RunSearch("engineer", "seattle");
-            CreateWebHostBuilder(args).Build().Run();
-
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+      CraigslistClass.RunSearch("engineer", "seattle");
+      CreateWebHostBuilder(args).Build().Run();
     }
-    
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+      WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+  }
 }
