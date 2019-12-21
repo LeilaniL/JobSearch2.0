@@ -7,9 +7,6 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-
 
 namespace JobSearchV2
 {
@@ -17,8 +14,7 @@ namespace JobSearchV2
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("HEEEEYYYYYY YOOOOO there I am working!!!");
-            ChromeDriver driver = new ChromeDriver();
+            CraigslistClass.RunSearch("engineer", "seattle");
             CreateWebHostBuilder(args).Build().Run();
 
         }
@@ -27,4 +23,5 @@ namespace JobSearchV2
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
+    
 }
