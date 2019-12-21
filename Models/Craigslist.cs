@@ -42,14 +42,22 @@ namespace JobSearchV2
           tempTitle = anchors[i].Text;
           tempLink = anchors[i].GetAttribute("href");
           IWebElement location = driver.FindElement(By.XPath("//*[@id='sortable-results']/ul/li[" + i + "]/p/span[2]/span[1]"));
-          tempLocation = location.Text;
+          if (location.Text != "" && location != null)
+          {
+            tempLocation = location.Text;
+          }
+          //*[@id="sortable-results"]/ul/li[2]/p/span[2]/span[1]
           IWebElement date = driver.FindElement(By.XPath("//*[@id='sortable-results']/ul/li[" + i + "]/p/time"));
           tempDate = date.Text;
           CraigslistClass tempjob = new CraigslistClass(tempTitle, tempLink, tempLocation, tempDate);
           craigslistJobs.Add(tempjob);
         }
         // driver.Close();
-        Console.WriteLine("JOBBBBSSS: " + craigslistJobs[0].Title + "LOCATED AT: " + craigslistJobs[0].Location);
+        foreach (CraigslistClass job in craigslistJobs)
+        {
+          Console.WriteLine("JOBBBBSSS: " + job.Title + " LOCATED AT: " + job.Location);
+          Console.WriteLine("CLICK HERE FOR LINKY LINK: " + job.Url);
+        }
         return craigslistJobs;
       }
       catch
