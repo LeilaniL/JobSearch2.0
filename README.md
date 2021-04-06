@@ -68,9 +68,8 @@ Search across multiple job boards and see results from sites like Monster, Indee
 * ASP .NET 
 * React
 
+----
+
 ## License
 
-MIT License
-
-Copyright (c) 2018 Leilani Leach
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) Copyright © 2021 Leilani Leach
